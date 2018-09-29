@@ -6,9 +6,10 @@ let mapleader = " "
 :set nonumber
 
 :nnoremap <leader>v :vsplit<CR>
+:nnoremap <leader>ev :tabnew C:/Users/keyse/_vimrc<CR>
 
 "reload _vimrc
-:nnoremap r :so ~/Documents/Coding_Projects_And_Competitions/dotfiles/_vimrc<CR>
+:nnoremap r :so ~/_vimrc<CR>
 
 "insert enter before or after line
 :nnoremap [<Space> O<Esc>
