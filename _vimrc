@@ -1,20 +1,23 @@
 :echo ">^.^<"
-:nnoremap <leader>ev :vsplit<CR>
+
+let mapleader = " "
+
+"turn line numbers off so Relative Number extension can do its thing
+:set nonumber
+
+:nnoremap <leader>v :vsplit<CR>
 
 "reload _vimrc
-:nmap r :so ~/_vimrc<CR>
+:nnoremap r :so ~/Documents/Coding_Projects_And_Competitions/dotfiles/_vimrc<CR>
 
 "insert enter before or after line
-:nmap [<Space> O<Esc>
-:nmap ]<Space> o<Esc>
+:nnoremap [<Space> O<Esc>
+:nnoremap ]<Space> o<Esc>
 
 "insert enter before cursor
-:nmap <S-CR> i<CR><Esc>l
-
-"paste before or after line, at indentation
-:nmap P O<C-r>"<Esc>b^
-:nmap p o<C-r>"<Esc>b^
+:nnoremap <S-CR> i<CR><Esc>l
 
 "go shortcuts
-:nmap gi :vsc Edit.GoToImplementation<CR>
-:nmap gr :vsc Edit.FindAllReferences<CR>
+:nnoremap gi :vsc Edit.GoToImplementation<CR>
+:nnoremap gr :vsc Edit.FindAllReferences<CR>
+:nnoremap gw <C-w>l
