@@ -1,24 +1,31 @@
 :echo ">^.^<"
 
+:set number
+:set hlsearch
+:set incsearch
+
 let mapleader = " "
 
-"turn line numbers off so Relative Number extension can do its thing
-:set nonumber
+" move this file to a new tab group through vertical splitting
+:nnoremap <leader>v :vsplit<CR><C-w>hZZ
 
-:nnoremap <leader>v :vsplit<CR>
+" edit and source vimrc
 :nnoremap <leader>ev :tabnew C:/Users/keyse/_vimrc<CR>
+:nnoremap <leader>sv :so ~/_vimrc<CR>
 
-"reload _vimrc
-:nnoremap r :so ~/_vimrc<CR>
-
-"insert enter before or after line
+" insert enter before or after line
 :nnoremap [<Space> O<Esc>
 :nnoremap ]<Space> o<Esc>
 
-"insert enter before cursor
+" insert enter before cursor
 :nnoremap <S-CR> i<CR><Esc>l
 
-"go shortcuts
+" go shortcuts
 :nnoremap gi :vsc Edit.GoToImplementation<CR>
 :nnoremap gr :vsc Edit.FindAllReferences<CR>
 :nnoremap gw <C-w>l
+:nnoremap gcc :vsc Edit.ToggleComment<CR>
+:vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
+
+" remove highlights
+:nnoremap <leader>rh :noh<CR>
