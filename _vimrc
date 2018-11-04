@@ -23,9 +23,12 @@ let mapleader = " "
 " go shortcuts
 :nnoremap gi :vsc Edit.GoToImplementation<CR>
 :nnoremap gr :vsc Edit.FindAllReferences<CR>
-:nnoremap gw <C-w>l
+:nnoremap gw <C-w>w
 :nnoremap gcc :vsc Edit.ToggleComment<CR>
 :vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
+
+" clear and edit line at indentation
+:nnoremap cc ^C
 
 " remove highlights
 :nnoremap <leader>rh :noh<CR>
