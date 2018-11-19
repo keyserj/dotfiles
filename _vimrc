@@ -32,3 +32,5 @@ let mapleader = " "
 
 " remove highlights
 :nnoremap <leader>rh :noh<CR>
+
+" move lines accomplished through AHK <A-jkhl> <A-arrow>
