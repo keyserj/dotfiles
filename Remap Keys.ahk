@@ -35,3 +35,6 @@ return
 !l::
 SendInput {Blind}{Right}
 return
+
+; Right-Alt for context menu (laptop doesn't have the key!!)
+RAlt::AppsKey
