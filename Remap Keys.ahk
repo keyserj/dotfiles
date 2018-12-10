@@ -1,17 +1,17 @@
-; Ctrl + Shift + Alt + [jkhl] for VIM-corresponding arrow keys
-^+!j::
+; Ctrl + Shift + [jkhl] for VIM-corresponding arrow keys
+^+j::
 SendInput {Down}
 return
 
-^+!k::
+^+k::
 SendInput {Up}
 return
 
-^+!h::
+^+h::
 SendInput {Left}
 return
 
-^+!l::
+^+l::
 SendInput {Right}
 return
 
