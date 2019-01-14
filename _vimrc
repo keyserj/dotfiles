@@ -27,6 +27,10 @@ let mapleader = " "
 :nnoremap gcc :vsc Edit.ToggleComment<CR>
 :vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
 
+" manually mapping tab traversal because it doesn't work with vs2019 yet
+:nnoremap gt :vsc Window.NextTab<CR>
+:nnoremap gT :vsc Window.PreviousTab<CR>
+
 " clear and edit line at indentation
 :nnoremap cc ^C
 
