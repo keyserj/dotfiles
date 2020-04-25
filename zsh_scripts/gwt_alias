@@ -1,0 +1,11 @@
+alias gwt=gwt_alias
+
+gwt_alias() {
+  #save current pane title, color
+
+  #set pane title
+  tmux select-pane -T $2
+
+  #forward command
+  /usr/local/bin/gwt $1 $2
+}
