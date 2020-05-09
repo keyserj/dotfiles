@@ -1,11 +1,33 @@
 alias gwt=gwt_alias
 
+PROD_SERVERS=" prod_appserver johnhancock_appserver transamerica_appserver "
+
 gwt_alias() {
   #save current pane title, color
+  CURRENT_PANE_TITLE="$(tmux display -p '#{pane_title}')"
+  CURRENT_PANE_COLOR=$(get_pane_color)
 
-  #set pane title
+  #set pane title, color
   tmux select-pane -T $2
+  if [[ " $PROD_SERVERS " =~ " $2 " ]]; then
+    tmux select-pane -P "${prod_pane_color}"
+  fi
 
   #forward command
   /usr/local/bin/gwt $1 $2
+
+  #reload pane title, color
+  tmux select-pane -T "${CURRENT_PANE_TITLE}"
+  tmux select-pane -P "${CURRENT_PANE_COLOR}"
+}
+
+get_pane_color() {
+  CURRENT_PANE_COLOR="$(tmux show -p -v window-style)"
+  CURRENT_WINDOW_COLOR="$(tmux show -w -v window-style)"
+
+  echo "${CURRENT_PANE_COLOR:-${CURRENT_WINDOW_COLOR}}"
+}
+
+prod_pane_color() {
+  echo 'fg=colour253,bg=colour232'
 }
