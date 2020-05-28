@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/keyserj/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 export TERM="screen-256color"
 ZSH_THEME="robbyrussell"
@@ -12,11 +12,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/zsh_scripts/*; do
+for file in ~/dotfiles/zsh_scripts/*(N); do
     source "$file"
 done
 
-for file in ~/dotfiles/zsh_specific/*; do
+for file in ~/dotfiles/zsh_specific/*(N); do
     source "$file"
 done
 
