@@ -3,13 +3,14 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export TERM="screen-256color"
 ZSH_THEME="robbyrussell"
+
+# I think oh-my-zsh plugins must be manually cloned
 plugins=(
-    fzf
     git
     zsh-autosuggestions
-    zsh-completions
     zsh-syntax-highlighting
     zsh-vim-mode
+    fzf-tab # seems like this needs to be last in plugin list? potentially because of https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -21,6 +22,9 @@ done
 for file in ~/dotfiles/zsh_specific/*(N); do
     source "$file"
 done
+
+# fzf command history
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vim mode for terminal line editing
 bindkey -v
@@ -64,3 +68,4 @@ _local_script() {
 compdef _local_script local_script # execute _script when <tab> (key to check for autocompletions) is pressed after the script command is typed out (I think...)
 
 echo "zsh loaded"
+

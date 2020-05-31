@@ -24,6 +24,15 @@ nnoremap ]<Space> o<Esc>
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
+" max line length indicator
+set colorcolumn=100
+
+" word wrap off
+set nowrap
+
+" always copy to clipboard if no register specified
+set clipboard+=unnamedplus
+
 " go shortcuts
 " nnoremap gi :vsc Edit.GoToImplementation<CR>
 " nnoremap gr :vsc Edit.FindAllReferences<CR>
