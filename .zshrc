@@ -1,10 +1,13 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# exports
+export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh installation
+export TERM="screen-256color" # use more colors
+export ZSH_THEME="robbyrussell" # theme
+export KEYTIMEOUT=1 # ESC enters vim mode more quickly
+export RAILS_CONSOLE=pry # use pry console
+export SKIP_SIMPLECOV=1 # don't run test coverage when running rspec
+export XDG_CONFIG_HOME="$HOME/.config" # default folder for more modern configs... e.g. nvim
 
-export TERM="screen-256color"
-ZSH_THEME="robbyrussell"
-
-# I think oh-my-zsh plugins must be manually cloned
+# plugins
 plugins=(
     git
     zsh-autosuggestions
@@ -12,16 +15,12 @@ plugins=(
     zsh-vim-mode
     fzf-tab # seems like this needs to be last in plugin list? potentially because of https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins
 )
-
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/zsh_scripts/*(N); do
-    source "$file"
-done
-
-for file in ~/dotfiles/zsh_specific/*(N); do
-    source "$file"
-done
+# aliases
+alias be="bundle exec"
+alias -g rspec="rspec --format doc"
+alias vim="nvim"
 
 # fzf command history
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -29,19 +28,15 @@ done
 # vim mode for terminal line editing
 bindkey -v
 
-# ESC enters vim mode more quickly?
-export KEYTIMEOUT=1
+# load modularized scripts
+for file in ~/dotfiles/zsh_scripts/*(N); do
+    source "$file"
+done
 
-# use pry console
-export RAILS_CONSOLE=pry
-
-# aliases
-alias be="bundle exec"
-alias -g rspec="rspec --format doc"
-alias vim="nvim"
-
-# don't run test coverage when running rspec
-export SKIP_SIMPLECOV=1
+# load scripts specific to device
+for file in ~/dotfiles/zsh_specific/*(N); do
+    source "$file"
+done
 
 # open a note named based on the first argument passed to the command
 note() {

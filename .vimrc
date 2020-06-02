@@ -1,5 +1,3 @@
-:echo ">^.^<"
-
 " set relative line numbering with current line number
 set number
 set relativenumber
@@ -14,8 +12,8 @@ let mapleader = " "
 nnoremap <leader>v :vsplit<CR>
 
 " edit and source vimrc
-nnoremap <leader>ve :tabnew ~/.vimrc<CR>
-nnoremap <leader>vs :so ~/.vimrc<CR>
+nnoremap <leader>ev :tabnew ~/.vimrc<CR>
+nnoremap <leader>sv :so ~/.vimrc<CR>
 
 " insert enter before or after line
 nnoremap [<Space> O<Esc>
@@ -76,7 +74,7 @@ call plug#begin("~/.vim/plugged")
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " requires brew install first?; makes sure to have latest binary
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'preservim/nerdtree'
 call plug#end()

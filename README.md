@@ -1,6 +1,12 @@
-# dotfiles usage
-On any machine, create a symlink in ~ for each dotfile.
-
-macos: `ln -s original` from ~
-
-Dotfiles may refer to files from folders in this repository. This is intended to keep the dotfiles organized. One reason for the organization is so that dotfile settings specific to certain environments can separate from settings that should work on all environments.
+# Setup
+This should work for linux and macos, not sure how much will work for windows.
+* install zsh and oh-my-zsh
+    * need to clone oh-my-zsh plugins manually (can look into antigen for automating this)
+* install tmux
+* install [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+* install fzf
+* install vim-plug
+* clone this repository into $HOME
+    * run setup.sh (untested)
+* reload zsh and install vim and tmux plugins
+    * `zsh` `vim` `:PlugInstall` `<tmux-prefix> + I`
