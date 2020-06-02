@@ -2,6 +2,7 @@ alias gwt=gwt_alias
 
 PROD_SERVERS=" prod_appserver johnhancock_appserver transamerica_appserver "
 
+# TODO this should also save pane-identifying info. Right now there's a bug where if you're SSH'd in and it times out while you're in another pane, that other pane gets its color/title updated instead of the one that timed out.
 gwt_alias() {
   #save current pane title, color
   CURRENT_PANE_TITLE="$(tmux display -p '#{pane_title}')"
