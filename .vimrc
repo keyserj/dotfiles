@@ -22,8 +22,11 @@ nnoremap ]<Space> o<Esc>
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
+" easier to list and switch buffers
+nnoremap <leader>b :Buffers<CR>
+
 " max line length indicator
-set colorcolumn=100
+set colorcolumn=101
 
 " word wrap off
 set nowrap
@@ -62,20 +65,27 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 autocmd VimResized * wincmd =
 
 " nerdtree
-nnoremap <leader>eo :NERDTreeToggle<CR>
+nnoremap <leader>et :NERDTreeToggle<CR>
 nnoremap <leader>ef :NERDTreeFind<CR>
 
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
 " arrow keys can be used through AHK <^+-jkhl> <arrow>, particularly useful for navigating vs2017's test explorer
 
+" coc install extensions if not already install
+let g:coc_global_extensions = ['coc-solargraph', 'coc-json']
+
 " plugins (`:PlugInstall` to install)
 call plug#begin("~/.vim/plugged")
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rails' " doesn't seem very worth yet
+Plug 'tpope/vim-surround'
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc' " required for all xolox plugins
 call plug#end()
 

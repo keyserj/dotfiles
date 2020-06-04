@@ -6,6 +6,7 @@ export KEYTIMEOUT=1 # ESC enters vim mode more quickly
 export RAILS_CONSOLE=pry # use pry console
 export SKIP_SIMPLECOV=1 # don't run test coverage when running rspec
 export XDG_CONFIG_HOME="$HOME/.config" # default folder for more modern configs... e.g. nvim
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden' # use ripgrep and show hidden files
 
 # plugins
 plugins=(
