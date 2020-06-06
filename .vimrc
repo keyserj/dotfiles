@@ -8,6 +8,9 @@ hi CursorLineNr cterm=bold ctermfg=DarkMagenta ctermbg=none
 
 let mapleader = " "
 
+" hide message when changing buffers from unsaved file
+set hidden
+
 " move this file to a new tab group through vertical splitting
 nnoremap <leader>v :vsplit<CR>
 
