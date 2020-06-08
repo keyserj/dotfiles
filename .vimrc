@@ -1,3 +1,20 @@
+" plugins (`:PlugInstall` to install)
+call plug#begin("~/.vim/plugged")
+Plug 'altercation/vim-colors-solarized' " color theme
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
+Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
+Plug 'kana/vim-textobj-user' " required for ruby block extension
+Plug 'nelstrom/vim-textobj-rubyblock' " not sure if worth because method txtobj exists already
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rails' " doesn't seem very worth yet
+Plug 'tpope/vim-surround'
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc' " required for all xolox plugins
+call plug#end()
+
 " set relative line numbering with current line number
 set number
 set relativenumber
@@ -6,10 +23,36 @@ set relativenumber
 hi LineNr cterm=none ctermfg=Gray ctermbg=none
 hi CursorLineNr cterm=bold ctermfg=DarkMagenta ctermbg=none
 
-let mapleader = " "
+" make spaces and tabs visible, with color
+" (colors: https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim)
+set list
+set listchars=tab:>\ ,space:·
+hi Whitespace ctermfg=240
 
 " hide message when changing buffers from unsaved file
 set hidden
+
+" popular color scheme
+" set background=dark
+" colorscheme solarized
+
+" max line length indicator
+set colorcolumn=101
+
+" word wrap off
+set nowrap
+
+" always copy to clipboard if no register specified
+set clipboard+=unnamedplus
+
+" resize vim windows when tmux pane is resized
+autocmd VimResized * wincmd =
+
+" coc install extensions if not already install
+let g:coc_global_extensions = ['coc-solargraph', 'coc-json']
+
+" space as leader because it's the easiest to reach and useless in normal mode
+let mapleader = " "
 
 " move this file to a new tab group through vertical splitting
 nnoremap <leader>v :vsplit<CR>
@@ -27,15 +70,6 @@ nnoremap <S-CR> i<CR><Esc>
 
 " easier to list and switch buffers
 nnoremap <leader>b :Buffers<CR>
-
-" max line length indicator
-set colorcolumn=101
-
-" word wrap off
-set nowrap
-
-" always copy to clipboard if no register specified
-set clipboard+=unnamedplus
 
 " go shortcuts
 " nnoremap gi :vsc Edit.GoToImplementation<CR>
@@ -64,9 +98,6 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-" resize vim windows when tmux pane is resized
-autocmd VimResized * wincmd =
-
 " nerdtree
 nnoremap <leader>et :NERDTreeToggle<CR>
 nnoremap <leader>ef :NERDTreeFind<CR>
@@ -74,21 +105,4 @@ nnoremap <leader>ef :NERDTreeFind<CR>
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
 " arrow keys can be used through AHK <^+-jkhl> <arrow>, particularly useful for navigating vs2017's test explorer
-
-" coc install extensions if not already install
-let g:coc_global_extensions = ['coc-solargraph', 'coc-json']
-
-" plugins (`:PlugInstall` to install)
-call plug#begin("~/.vim/plugged")
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
-Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
-Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-rails' " doesn't seem very worth yet
-Plug 'tpope/vim-surround'
-" Plug 'xolox/vim-easytags'
-" Plug 'xolox/vim-misc' " required for all xolox plugins
-call plug#end()
 
