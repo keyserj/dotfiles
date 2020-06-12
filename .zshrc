@@ -49,7 +49,7 @@ done
 
 # open a note named based on the first argument passed to the command
 note() {
-    code ~/Documents/notes/$1
+    vim ~/Documents/notes/$1
 }
 
 # add the results of the command "ls ~/Documents/notes" to the list of possible autocompletions
@@ -61,7 +61,7 @@ compdef _note note # execute _note when <tab> (key to check for autocompletions)
 
 # open a script named based on the first argument passed to the command
 local_script() {
-    code ~/Documents/scripts/$1
+    vim ~/Documents/scripts/$1
 }
 
 # add the results of the command "ls ~/Documents/scripts" to the list of possible autocompletions
@@ -70,6 +70,10 @@ _local_script() {
     "($(ls ~/Documents/scripts))"
 }
 compdef _local_script local_script # execute _script when <tab> (key to check for autocompletions) is pressed after the script command is typed out (I think...)
+
+# nvm not using default for some reason... wtf
+nvm use default
+
 
 echo "zsh loaded"
 

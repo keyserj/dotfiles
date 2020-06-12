@@ -1,6 +1,5 @@
 " plugins (`:PlugInstall` to install)
 call plug#begin("~/.vim/plugged")
-Plug 'altercation/vim-colors-solarized' " color theme
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
@@ -9,6 +8,7 @@ Plug 'nelstrom/vim-textobj-rubyblock' " not sure if worth because method txtobj 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails' " doesn't seem very worth yet
 Plug 'tpope/vim-surround'
 " Plug 'xolox/vim-easytags'
@@ -31,10 +31,6 @@ hi Whitespace ctermfg=240
 
 " hide message when changing buffers from unsaved file
 set hidden
-
-" popular color scheme
-" set background=dark
-" colorscheme solarized
 
 " max line length indicator
 set colorcolumn=101
@@ -71,16 +67,6 @@ nnoremap <S-CR> i<CR><Esc>
 " easier to list and switch buffers
 nnoremap <leader>b :Buffers<CR>
 
-" go shortcuts
-" nnoremap gi :vsc Edit.GoToImplementation<CR>
-" nnoremap gr :vsc Edit.FindAllReferences<CR>
-" nnoremap gcc :vsc Edit.ToggleComment<CR>
-" vnoremap gc :vsc Edit.ToggleComment<CR><Esc><Esc>
-nnoremap gw <C-w>w
-
-" clear and edit line at indentation
-" nnoremap cc ^C
-
 " remove highlights
 nnoremap <leader>rh :noh<CR>
 
@@ -101,6 +87,26 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " nerdtree
 nnoremap <leader>et :NERDTreeToggle<CR>
 nnoremap <leader>ef :NERDTreeFind<CR>
+
+" go to definition
+function! s:GoToDefinition()
+  if CocAction('jumpDefinition')
+    return v:true
+  endif
+
+  " no idea why `execute("normal g\<C-]>")` doesn't work here...
+  " nor why `let x = [below line]` doesn't work
+  execute(":tjump " . expand("<cword>"))
+  " execute("normal g\<C-]>")
+endfunction
+
+nnoremap <silent> gd :call <SID>GoToDefinition()<CR>
+
+" tab select first Coc option
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" use <C-SPACE> to trigger completion
+inoremap <silent><expr> <C-SPACE> coc#refresh()
 
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
