@@ -73,6 +73,16 @@ nnoremap <leader>rh :noh<CR>
 " easy fuzzy find files
 nnoremap <leader>f :FZF<CR>
 
+" nerdtree
+nnoremap <leader>et :NERDTreeToggle<CR>
+nnoremap <leader>ef :NERDTreeFind<CR>
+
+" tab select first Coc option
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" use <C-SPACE> to trigger completion
+inoremap <silent><expr> <C-SPACE> coc#refresh()
+
 " use rg for fzf's text search, without fuzzy finding https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
 nnoremap <leader>F :RG<CR>
 function! RipgrepFzf(query, fullscreen)
@@ -83,10 +93,6 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
-" nerdtree
-nnoremap <leader>et :NERDTreeToggle<CR>
-nnoremap <leader>ef :NERDTreeFind<CR>
 
 " go to definition
 function! s:GoToDefinition()
@@ -102,11 +108,23 @@ endfunction
 
 nnoremap <silent> gd :call <SID>GoToDefinition()<CR>
 
-" tab select first Coc option
-inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+" delete buffers conveniently
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
 
-" use <C-SPACE> to trigger completion
-inoremap <silent><expr> <C-SPACE> coc#refresh()
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+  \ }))
 
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
