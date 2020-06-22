@@ -13,4 +13,4 @@ This should work for linux and macos, not sure how much will work for windows.
     * `zsh` `vim` `:PlugInstall` `<tmux-prefix> + I`
 
 # WSL specific
-* install win32yank
+* install win32yank, ensure 'win32yank.exe' is in PATH

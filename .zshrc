@@ -28,7 +28,7 @@ alias -g rspec="rspec --format doc"
 alias vim="nvim"
 
 # fzf command history
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # no duplicates when <UP>ing through command history
 # for some reason this only works after executing a bad command...??
@@ -38,36 +38,36 @@ setopt HIST_IGNORE_ALL_DUPS
 bindkey -v
 
 # load modularized scripts
-for file in ~/dotfiles/zsh_scripts/*(N); do
+for file in $HOME/dotfiles/zsh_scripts/*(N); do
     source "$file"
 done
 
 # load scripts specific to device
-for file in ~/dotfiles/zsh_specific/*(N); do
+for file in $HOME/dotfiles/zsh_specific/*(N); do
     source "$file"
 done
 
 # open a note named based on the first argument passed to the command
 note() {
-    vim ~/Documents/notes/$1
+    vim $HOME/Documents/notes/$1
 }
 
-# add the results of the command "ls ~/Documents/notes" to the list of possible autocompletions
+# add the results of the command "ls $HOME/Documents/notes" to the list of possible autocompletions
 _note() {
   _alternative \
-    "($(ls ~/Documents/notes))"
+    "($(ls $HOME/Documents/notes))"
 }
 compdef _note note # execute _note when <tab> (key to check for autocompletions) is pressed after the note command is typed out (I think...)
 
 # open a script named based on the first argument passed to the command
 local_script() {
-    vim ~/Documents/scripts/$1
+    vim $HOME/Documents/scripts/$1
 }
 
-# add the results of the command "ls ~/Documents/scripts" to the list of possible autocompletions
+# add the results of the command "ls $HOME/Documents/scripts" to the list of possible autocompletions
 _local_script() {
   _alternative \
-    "($(ls ~/Documents/scripts))"
+    "($(ls $HOME/Documents/scripts))"
 }
 compdef _local_script local_script # execute _script when <tab> (key to check for autocompletions) is pressed after the script command is typed out (I think...)
 
