@@ -1,6 +1,7 @@
 " plugins (`:PlugInstall` to install)
 call plug#begin("~/.vim/plugged")
 Plug 'airblade/vim-gitgutter' " easy view/manage git changes
+Plug 'APZelos/blamer.nvim' " show blame inline
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
@@ -30,6 +31,21 @@ set foldtext=MyFoldText()
 function MyFoldText()
   return getline(v:foldstart)
 endfunction
+" use relative dates for inline blame
+let g:blamer_relative_time = 1
+
+" quicker inline blame display
+let g:blamer_delay = 500
+
+" enable inline blame
+let g:blamer_enabled = 1
+
+" inline blame color
+hi Blamer ctermfg=240
+
+" open vsplit to right and hsplit to bottom
+:set splitright
+:set splitbelow
 
 " line number colorings
 hi LineNr cterm=none ctermfg=Gray ctermbg=none
