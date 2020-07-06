@@ -1,20 +1,16 @@
 " plugins (`:PlugInstall` to install)
 call plug#begin("~/.vim/plugged")
-Plug 'airblade/vim-gitgutter' " easy view/manage git changes
-Plug 'APZelos/blamer.nvim' " show blame inline
+Plug 'airblade/vim-gitgutter' " easy view/manage git changes while editing
+Plug 'APZelos/blamer.nvim' " inline blame
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
-Plug 'kana/vim-textobj-user' " required for ruby block extension
-Plug 'nelstrom/vim-textobj-rubyblock' " not sure if worth because method txtobj exists already
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails' " doesn't seem very worth yet
 Plug 'tpope/vim-surround'
-" Plug 'xolox/vim-easytags'
-" Plug 'xolox/vim-misc' " required for all xolox plugins
 call plug#end()
 
 " set relative line numbering with current line number
