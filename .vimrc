@@ -17,16 +17,40 @@ call plug#end()
 set number
 set relativenumber
 
+
+
+" max line length indicator
+set colorcolumn=101
+
+" open vsplit to right and hsplit to bottom
+set splitright
+set splitbelow
+
+" make spaces and tabs visible
+set list
+set listchars=tab:>\ ,space:·
+hi Whitespace ctermfg=240
+
+" hide message when changing buffers from unsaved file
+set hidden
+
+" word wrap off
+set nowrap
+
+" always copy to clipboard if no register specified
+set clipboard+=unnamedplus
+
 " spell check for text-based files
 autocmd BufRead,BufNewFile *.txt,*.md,*.org setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal wrap
 autocmd BufRead,BufNewFile *.txt setlocal linebreak
 
-" don't use special fold text
-set foldtext=MyFoldText()
-function MyFoldText()
-  return getline(v:foldstart)
-endfunction
+" resize vim windows when tmux pane is resized
+autocmd VimResized * wincmd =
+
+" inline blame color
+highlight default link Blamer Whitespace
+
 " use relative dates for inline blame
 let g:blamer_relative_time = 1
 
@@ -36,37 +60,6 @@ let g:blamer_delay = 500
 " enable inline blame
 let g:blamer_enabled = 1
 
-" inline blame color
-hi Blamer ctermfg=240
-
-" open vsplit to right and hsplit to bottom
-:set splitright
-:set splitbelow
-
-" line number colorings
-hi LineNr cterm=none ctermfg=Gray ctermbg=none
-hi CursorLineNr cterm=bold ctermfg=DarkMagenta ctermbg=none
-
-" make spaces and tabs visible, with color
-" (colors: https://vim.fandom.com/wiki/Xterm256_color_names_for_console_Vim)
-set list
-set listchars=tab:>\ ,space:·
-hi Whitespace ctermfg=240
-
-" hide message when changing buffers from unsaved file
-set hidden
-
-" max line length indicator
-set colorcolumn=101
-
-" word wrap off
-set nowrap
-
-" always copy to clipboard if no register specified
-set clipboard+=unnamedplus
-
-" gitgutter update quicker
-set updatetime=100
 
 " neat gitgutter features
 " * shows which lines have been modified in gutter (not super clear on own)
@@ -76,11 +69,8 @@ set updatetime=100
 " diff display
 " * ]c [c to jump between changes in buffer
 
-" resize vim windows when tmux pane is resized
-autocmd VimResized * wincmd =
-
 " coc install extensions if not already install
-let g:coc_global_extensions = ['coc-solargraph', 'coc-json']
+let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json' ]
 
 " space as leader because it's the easiest to reach and useless in normal mode
 let mapleader = " "
@@ -174,6 +164,13 @@ augroup BWCCreateDir
   autocmd!
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
+" don't use special fold text
+set foldtext=MyFoldText()
+function MyFoldText()
+  return getline(v:foldstart)
+endfunction
+
 
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
