@@ -5,12 +5,14 @@ Plug 'APZelos/blamer.nvim' " inline blame
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
+Plug 'morhetz/gruvbox' " colors
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails' " doesn't seem very worth yet
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline' " better-looking status bar
 call plug#end()
 
 " set relative line numbering with current line number
@@ -18,6 +20,8 @@ set number
 set relativenumber
 
 
+" use true colors
+set termguicolors
 
 " max line length indicator
 set colorcolumn=101
@@ -29,7 +33,6 @@ set splitbelow
 " make spaces and tabs visible
 set list
 set listchars=tab:>\ ,space:·
-hi Whitespace ctermfg=240
 
 " hide message when changing buffers from unsaved file
 set hidden
@@ -40,6 +43,11 @@ set nowrap
 " always copy to clipboard if no register specified
 set clipboard+=unnamedplus
 
+" set gruvbox color scheme - airline colorings only look good when autocmd is used?
+autocmd vimenter * colorscheme gruvbox
+
+" distinguish Comment coloring from blamer coloring
+autocmd vimenter * highlight Comment guifg=#6A9F55
 " spell check for text-based files
 autocmd BufRead,BufNewFile *.txt,*.md,*.org setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal wrap
