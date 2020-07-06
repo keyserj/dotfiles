@@ -19,6 +19,8 @@ call plug#end()
 set number
 set relativenumber
 
+" do not continue comment automatically on newlines
+set formatoptions-=ro
 
 " use true colors
 set termguicolors
@@ -48,6 +50,7 @@ autocmd vimenter * colorscheme gruvbox
 
 " distinguish Comment coloring from blamer coloring
 autocmd vimenter * highlight Comment guifg=#6A9F55
+
 " spell check for text-based files
 autocmd BufRead,BufNewFile *.txt,*.md,*.org setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal wrap
