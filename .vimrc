@@ -8,9 +8,13 @@ Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'morhetz/gruvbox' " colors
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
+Plug 'rickhowe/diffchar.vim' " view modified diff lines by word rather than line
+Plug 'rhysd/git-messenger.vim' " view details of commit
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails' " doesn't seem very worth yet
+Plug 'tpope/vim-rhubarb' " combine with Fugitive to GBrowse to github URL
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline' " better-looking status bar
 call plug#end()
@@ -71,6 +75,8 @@ let g:blamer_delay = 500
 " enable inline blame
 let g:blamer_enabled = 1
 
+" wsl set up for starting browser
+let g:netrw_browsex_viewer='cmd.exe /C start'
 
 " neat gitgutter features
 " * shows which lines have been modified in gutter (not super clear on own)
@@ -108,6 +114,16 @@ nnoremap <leader>rh :noh<CR>
 
 " easy fuzzy find files
 nnoremap <leader>f :FZF<CR>
+
+" open current line on GitHub master latest commit
+nnoremap <leader>gom :.GBrowse master:%<CR>
+vnoremap <leader>gom :.GBrowse master:%<CR>
+
+" view commit details
+nnoremap <leader>c :GitMessenger<CR>
+
+" open fugitive status
+nnoremap <leader>gs :Gstatus<CR>
 
 " nerdtree
 nnoremap <leader>et :NERDTreeToggle<CR>
