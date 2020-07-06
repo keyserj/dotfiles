@@ -125,6 +125,16 @@ nnoremap <leader>c :GitMessenger<CR>
 " open fugitive status
 nnoremap <leader>gs :Gstatus<CR>
 
+" gdf view diff for file, unstaged
+" gdu view diff for all unstaged
+" gds view diff for all staged
+" gdc view diff for file from commit
+" gdc view diff from commit
+" gb blame file
+" gom open master
+" blame before commit
+" gcd view commit details
+
 " nerdtree
 nnoremap <leader>et :NERDTreeToggle<CR>
 nnoremap <leader>ef :NERDTreeFind<CR>
