@@ -80,6 +80,9 @@ let g:blamer_delay = 500
 " enable inline blame
 let g:blamer_enabled = 1
 
+" don't inline blame in visual mode... way too laggy
+let g:blamer_show_in_visual_modes = 0
+
 " wsl set up for starting browser
 let g:netrw_browsex_viewer='cmd.exe /C start'
 
