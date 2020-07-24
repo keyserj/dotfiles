@@ -123,6 +123,12 @@ nnoremap <leader>rh :noh<CR>
 " easy fuzzy find files
 nnoremap <leader>f :FZF<CR>
 
+" go to alternate file
+nnoremap <leader>ga :A<CR>
+
+" go to related file
+nnoremap <leader>gr :R<CR>
+
 " open current line on GitHub master latest commit
 nnoremap <leader>gom :GBrowse master:%<CR>
 vnoremap <leader>gom :.GBrowse master:%<CR>
