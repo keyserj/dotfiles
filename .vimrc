@@ -24,7 +24,9 @@ set number
 set relativenumber
 
 " do not continue comment automatically on newlines
-set formatoptions-=ro
+" autocmd needed because ftplugin/vim.vim runs when a file is loaded, and this
+" must be run after that: https://vi.stackexchange.com/q/9366
+autocmd FileType * set formatoptions-=ro
 
 " use true colors
 set termguicolors
