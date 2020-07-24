@@ -164,6 +164,10 @@ inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<C
 " use <C-SPACE> to trigger completion
 inoremap <silent><expr> <C-SPACE> coc#refresh()
 
+" format xml
+nnoremap <leader>x :% !xmllint --format -<CR>
+vnoremap <leader>x :!xmllint --format -<CR>
+
 " use rg for fzf's text search, without fuzzy finding https://github.com/junegunn/fzf.vim#example-advanced-ripgrep-integration
 nnoremap <leader>F :RG<CR>
 function! RipgrepFzf(query, fullscreen)
