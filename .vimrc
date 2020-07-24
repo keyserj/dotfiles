@@ -124,7 +124,7 @@ nnoremap <leader>rh :noh<CR>
 nnoremap <leader>f :FZF<CR>
 
 " open current line on GitHub master latest commit
-nnoremap <leader>gom :.GBrowse master:%<CR>
+nnoremap <leader>gom :GBrowse master:%<CR>
 vnoremap <leader>gom :.GBrowse master:%<CR>
 
 " view commit details
@@ -133,6 +133,17 @@ nnoremap <leader>c :GitMessenger<CR>
 " open fugitive status
 nnoremap <leader>gs :Gstatus<CR>
 
+" pw should push 'weak' from :Gstatus
+autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
+
+" pf should push -f from :Gstatus
+autocmd FileType fugitive nnoremap <buffer> pf :Git push -f<CR>
+
+" specify commit message from :Gstatus
+autocmd FileType fugitive nnoremap <buffer> c<Space> :Git commit -m ""<left>
+
+" grm to rebase onto fetched origin/master
+" gri to interactive rebase onto pulled master
 " gdf view diff for file, unstaged
 " gdu view diff for all unstaged
 " gds view diff for all staged
