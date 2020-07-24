@@ -66,6 +66,9 @@ autocmd VimResized * wincmd =
 " inline blame color
 highlight default link Blamer Whitespace
 
+" don't invert visual mode highlighting colors
+let g:gruvbox_invert_selection = 0
+
 " use relative dates for inline blame
 let g:blamer_relative_time = 1
 
