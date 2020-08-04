@@ -114,38 +114,38 @@ nnoremap ]<Space> o<Esc>
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
-" easier to list and switch buffers
+" easier to list and switch buffers (fzf.vim)
 nnoremap <leader>b :Buffers<CR>
 
 " remove highlights
 nnoremap <leader>rh :noh<CR>
 
-" easy fuzzy find files
+" easy fuzzy find files (fzf.vim)
 nnoremap <leader>f :FZF<CR>
 
-" go to alternate file
+" go to alternate file (rails.vim)
 nnoremap <leader>ga :A<CR>
 
-" go to related file
+" go to related file (rails.vim)
 nnoremap <leader>gr :R<CR>
 
-" open current line on GitHub master latest commit
+" open current line on GitHub master latest commit (vim-fugitive)
 nnoremap <leader>gom :GBrowse master:%<CR>
 vnoremap <leader>gom :.GBrowse master:%<CR>
 
-" view commit details
+" view commit details (git-messenger.vim)
 nnoremap <leader>c :GitMessenger<CR>
 
-" open fugitive status
+" open fugitive status (vim-fugitive)
 nnoremap <leader>gs :Gstatus<CR>
 
-" pw should push 'weak' from :Gstatus
+" pw should push 'weak' from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
 
-" pf should push -f from :Gstatus
+" pf should push -f from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pf :Git push -f<CR>
 
-" specify commit message from :Gstatus
+" specify commit message from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> c<Space> :Git commit -m ""<left>
 
 " grm to rebase onto fetched origin/master
