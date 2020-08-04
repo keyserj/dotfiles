@@ -10,6 +10,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
 Plug 'preservim/nerdtree'
 Plug 'rickhowe/diffchar.vim' " view modified diff lines by word rather than line
 Plug 'rhysd/git-messenger.vim' " view details of commit
+Plug 'moll/vim-bbye' " close buffer without closing window
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -119,6 +120,8 @@ nnoremap <S-CR> i<CR><Esc>
 " easier to list and switch buffers (fzf.vim)
 nnoremap <leader>b :Buffers<CR>
 
+" delete buffer without closing window (vim-bbye)
+nnoremap <leader>q :Bdelete<CR>
 " remove highlights
 nnoremap <leader>rh :noh<CR>
 
