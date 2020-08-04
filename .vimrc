@@ -111,6 +111,8 @@ nnoremap <leader>sv :so ~/.vimrc<CR>
 nnoremap [<Space> O<Esc>
 nnoremap ]<Space> o<Esc>
 
+" yank file path
+nnoremap <leader>y :let @+ = expand("%")<CR>
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
