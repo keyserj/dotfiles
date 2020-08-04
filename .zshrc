@@ -26,6 +26,7 @@ source $ZSH/oh-my-zsh.sh
 alias be="bundle exec"
 alias -g rspec="rspec --format doc"
 alias vim="nvim"
+alias grm="git fetch && git rebase origin/master" # "git rebase master"
 
 # fzf command history
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
