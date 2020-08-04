@@ -104,7 +104,7 @@ let mapleader = " "
 nnoremap <leader>v :vsplit<CR>
 
 " edit and source vimrc
-nnoremap <leader>ev :tabnew ~/.vimrc<CR>
+nnoremap <leader>ev :e ~/.vimrc<CR>
 nnoremap <leader>sv :so ~/.vimrc<CR>
 
 " insert enter before or after line
