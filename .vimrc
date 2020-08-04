@@ -114,6 +114,7 @@ nnoremap ]<Space> o<Esc>
 
 " yank file path
 nnoremap <leader>y :let @+ = expand("%")<CR>
+
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
@@ -122,6 +123,7 @@ nnoremap <leader>b :Buffers<CR>
 
 " delete buffer without closing window (vim-bbye)
 nnoremap <leader>q :Bdelete<CR>
+
 " remove highlights
 nnoremap <leader>rh :noh<CR>
 
