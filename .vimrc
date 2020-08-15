@@ -114,7 +114,14 @@ nnoremap <S-CR> i<CR><Esc>
 nnoremap <leader>b :Buffers<CR>
 
 " delete buffer without closing window (vim-bbye)
-nnoremap <leader>q :Bdelete<CR>
+" function CloseBuffer()
+"   Buffers
+"   call feedkeys("\<CR>")
+"   messages
+" endfunction
+" nnoremap <leader>q :call CloseBuffer()<CR>
+" nnoremap <leader>q :Buffers<CR><ESC> | :messages
+nnoremap <leader>q :bd<CR>
 
 " remove highlights
 nnoremap <leader>rh :noh<CR>
