@@ -87,14 +87,6 @@ let g:blamer_show_in_visual_modes = 0
 " wsl set up for starting browser
 let g:netrw_browsex_viewer='cmd.exe /C start'
 
-" neat gitgutter features
-" * shows which lines have been modified in gutter (not super clear on own)
-" * line numbers change color to highlight changes less intrusively than
-" highlighting... but the coloring is based on the CursorLineNr highlight...
-" * fold all file except changes, pretty neat, but would be outshined by easy
-" diff display
-" * ]c [c to jump between changes in buffer
-
 " coc install extensions if not already install
 let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json' ]
 
