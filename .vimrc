@@ -244,6 +244,13 @@ function MyFoldText()
   return getline(v:foldstart)
 endfunction
 
+" make alternate file always reference specs
+" let g:rails_projections = {
+" 			\ "app/*.rb": {
+" 			\   "alternate": [
+" 			\     "spec/**/{basename}_spec.rb"
+" 			\   ]
+" 			\ }}
 
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
