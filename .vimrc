@@ -145,6 +145,9 @@ nnoremap <leader>c :GitMessenger<CR>
 " open fugitive status (vim-fugitive)
 nnoremap <leader>gs :Gstatus<CR>
 
+" blame file (vim-fugitive)
+nnoremap <leader>gb :Gblame<CR>
+
 " pw should push 'weak' from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
 
@@ -161,8 +164,6 @@ autocmd FileType fugitive nnoremap <buffer> c<Space> :Git commit -m ""<left>
 " gds view diff for all staged
 " gdc view diff for file from commit
 " gdc view diff from commit
-" gb blame file
-" gom open master
 " blame before commit
 " gcd view commit details
 
