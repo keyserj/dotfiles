@@ -149,6 +149,12 @@ nnoremap <leader>gs :Gstatus<CR>
 " blame file (vim-fugitive)
 nnoremap <leader>gb :Gblame<CR>
 
+" git log (vim-fugitive, gitconfig)
+nnoremap <leader>gll :Git ll<CR>
+
+" git fetch && rebase (vim-fugitive, zshrc)
+nnoremap <leader>grm :!grm<CR>
+
 " pw should push 'weak' from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
 
