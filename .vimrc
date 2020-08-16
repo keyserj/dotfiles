@@ -180,6 +180,10 @@ nnoremap <leader>et :NERDTreeToggle<CR>
 " find file in file explorer (nerdtree)
 nnoremap <leader>ef :NERDTreeFind<CR>
 
+" override nerdtree C-j & C-k maps so tmux vim navigator can use
+let g:NERDTreeMapJumpPrevSibling=""
+let g:NERDTreeMapJumpNextSibling=""
+
 " tab select first Coc option
 inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
