@@ -152,8 +152,10 @@ nnoremap <leader>gb :Gblame<CR>
 " git log (vim-fugitive, gitconfig)
 nnoremap <leader>gll :Git ll<CR>
 
-" git fetch && rebase (vim-fugitive, zshrc)
-nnoremap <leader>grm :!grm<CR>
+" git fetch && rebase (vim-fugitive)
+" using vim-fugitive instead of zsh alias because apparently need
+" to load all zshrc on every zsh command in order to do so... too slow
+nnoremap <leader>grm :Git fetch<CR>:Git rebase origin/master<CR>
 
 " pw should push 'weak' from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
