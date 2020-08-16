@@ -94,8 +94,8 @@ let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json' ]
 " space as leader because it's the easiest to reach and useless in normal mode
 let mapleader = " "
 
-" move this file to a new tab group through vertical splitting
-nnoremap <leader>v :vsplit<CR>
+" open new vertical split
+nnoremap <leader>v :vnew<CR>
 
 " edit and source vimrc
 nnoremap <leader>ev :e ~/.vimrc<CR>
