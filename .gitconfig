@@ -17,12 +17,7 @@
 	default = current
 [fetch]
 	prune = true
-[user]
-	email = keyser.joel@gmail.com
-	name = Joel Keyser
 
 ; specific settings (e.g. nvim bin location, work user email)
-[includeIf "gitdir:~/code/"]
-	path = ~/code/.gitconfig
-[includeIf "gitdir:~/Coding_Projects_And_Competitions/"]
-	path = ~/Coding_Projects_And_Competitions/.gitconfig
+[include]
+	path = ~/.gitconfig.local
