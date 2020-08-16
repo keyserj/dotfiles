@@ -7,8 +7,8 @@ Plug 'dhruvasagar/vim-zoom' " zoom windows via <C-w> m
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'morhetz/gruvbox' " colors
-Plug 'neoclide/coc.nvim', { 'branch': 'release' } " doesn't seem very worth yet
-Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' } " autocomplete, language servers
+Plug 'preservim/nerdtree' " file explorer
 Plug 'rickhowe/diffchar.vim' " view modified diff lines by word rather than line
 Plug 'rhysd/git-messenger.vim' " view details of commit
 Plug 'moll/vim-bbye' " close buffer without closing window
@@ -168,8 +168,10 @@ autocmd FileType fugitive nnoremap <buffer> c<Space> :Git commit -m ""<left>
 " blame before commit
 " gcd view commit details
 
-" nerdtree
+" toggle file explorer (nerdtree)
 nnoremap <leader>et :NERDTreeToggle<CR>
+
+" find file in file explorer (nerdtree)
 nnoremap <leader>ef :NERDTreeFind<CR>
 
 " tab select first Coc option
