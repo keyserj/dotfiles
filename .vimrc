@@ -172,7 +172,6 @@ autocmd FileType fugitive nnoremap <buffer> pf :Git push -f<CR>
 " specify commit message from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> c<Space> :Git commit -m ""<left>
 
-" grm to rebase onto fetched origin/master
 " gri to interactive rebase onto pulled master
 " gdf view diff for file, unstaged
 " gdu view diff for all unstaged
