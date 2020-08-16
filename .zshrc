@@ -17,6 +17,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden' # use ripgrep a
 
 # plugins
 plugins=(
+	alias-tips
 	git
 	z # navigate to frecent files
 	zsh-autosuggestions
