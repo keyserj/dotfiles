@@ -157,6 +157,12 @@ nnoremap <leader>gll :Git ll<CR>
 " to load all zshrc on every zsh command in order to do so... too slow
 nnoremap <leader>grm :Git fetch<CR>:Git rebase origin/master<CR>
 
+" git stash (vim-fugitive)
+nnoremap <leader>gzs :Git stash<CR>
+
+" git stash pop (vim-fugitive)
+nnoremap <leader>gzp :Git stash pop<CR>
+
 " pw should push 'weak' from :Gstatus (vim-fugitive)
 autocmd FileType fugitive nnoremap <buffer> pw :Git push<CR>
 
