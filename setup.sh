@@ -6,6 +6,7 @@ cd $HOME
 ln -s dotfiles/.zshrc
 ln -s dotfiles/.tmux.conf
 ln -s dotfiles/.vimrc
+ln -s dotfiles/.gitconfig
 
 mkdir -p .config/nvim
 cd .config/nvim
