@@ -3,6 +3,7 @@ call plug#begin("~/.vim/plugged")
 Plug 'airblade/vim-gitgutter' " easy view/manage git changes while editing
 Plug 'APZelos/blamer.nvim' " inline blame
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dhruvasagar/vim-zoom' " zoom windows via <C-w> m
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'morhetz/gruvbox' " colors
