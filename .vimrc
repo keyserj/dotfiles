@@ -150,7 +150,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 " git log (vim-fugitive, gitconfig)
-nnoremap <leader>gll :Git ll<CR>
+nnoremap <leader>gl :Git ll<CR>
 
 " git fetch && rebase (vim-fugitive)
 " using vim-fugitive instead of zsh alias because apparently need
