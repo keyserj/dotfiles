@@ -1,7 +1,9 @@
 [pull]
 	rebase = true
 [merge]
-	tool = vimdiff
+	tool = nvimdiff4
+[diff]
+	tool = nvimdiff4
 [color]
 	diff   = auto
 	status = auto
