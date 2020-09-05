@@ -40,6 +40,9 @@ set colorcolumn=101
 set splitright
 set splitbelow
 
+" reduce delay for gitgutter (default 4000 ms) (note: also controls delay for writing swap file)
+set updatetime=100
+
 " make spaces and tabs visible
 set list
 set listchars=tab:>\ ,space:·
