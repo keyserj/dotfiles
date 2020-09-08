@@ -133,7 +133,8 @@ nnoremap <leader>b :Buffers<CR>
 " endfunction
 " nnoremap <leader>q :call CloseBuffer()<CR>
 " nnoremap <leader>q :Buffers<CR><ESC> | :messages
-nnoremap <leader>q :bd<CR>
+" nnoremap <leader>q :bd<CR>
+nnoremap <leader>q :bp\|bd #<CR>
 
 " remove highlights
 nnoremap <leader>rh :noh<CR>
