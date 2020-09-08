@@ -106,7 +106,7 @@ let mapleader = " "
 " nnoremap <leader>se :Obsession!
 
 " open new vertical split
-nnoremap <leader>v :vnew<CR>
+nnoremap <leader>v :vsplit<CR>
 
 " edit and source vimrc
 nnoremap <leader>ev :e ~/.vimrc<CR>
