@@ -15,7 +15,6 @@ Plug 'moll/vim-bbye' " close buffer without closing window
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession' " automatic session file management
 Plug 'tpope/vim-rails' " doesn't seem very worth yet
 Plug 'tpope/vim-rhubarb' " combine with Fugitive to GBrowse to github URL
 Plug 'tpope/vim-surround'
@@ -99,11 +98,11 @@ let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json' ]
 " space as leader because it's the easiest to reach and useless in normal mode
 let mapleader = " "
 
-" begin recording session, input [name].vim
-" nnoremap <leader>sb :Obsession 
+" save session, input [name].vim
+nnoremap <leader>ss :mksession .vim<left><left><left><left>
 
-" end recording session
-" nnoremap <leader>se :Obsession!
+" find and load session - not using fzf#wrap because can't think of reason to apply opts
+nnoremap <leader>sf :call fzf#run({ 'source': 'ls \| grep .vim$', 'sink': 'source' }))<CR>
 
 " open new vertical split
 nnoremap <leader>v :vsplit<CR>
