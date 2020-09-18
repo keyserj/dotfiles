@@ -209,7 +209,7 @@ let g:NERDTreeMapJumpPrevSibling=""
 let g:NERDTreeMapJumpNextSibling=""
 
 " tab select first Coc option
-inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "<TAB>"
 
 " use <C-SPACE> to trigger completion
 inoremap <silent><expr> <C-SPACE> coc#refresh()
