@@ -293,4 +293,3 @@ endfunction
 " move lines accomplished through AHK <A-jkhl> <A-arrow>
 
 " arrow keys can be used through AHK <^+-jkhl> <arrow>, particularly useful for navigating vs2017's test explorer
-
