@@ -6,6 +6,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-zoom' " zoom windows via <C-w> m
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
+Plug 'junegunn/gv.vim' " better git log view
 Plug 'morhetz/gruvbox' " colors
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " autocomplete, language servers
 Plug 'preservim/nerdtree' " file explorer
@@ -166,8 +167,8 @@ nnoremap <leader>gs :Gstatus<CR>
 " blame file (vim-fugitive)
 nnoremap <leader>gb :Gblame<CR>
 
-" git log (vim-fugitive, gitconfig)
-nnoremap <leader>gl :Git ll<CR>
+" git log (gv.vim)
+nnoremap <leader>gl :GV<CR>
 
 " git fetch && rebase (vim-fugitive)
 " using vim-fugitive instead of zsh alias because apparently need
