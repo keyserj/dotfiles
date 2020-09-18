@@ -93,7 +93,7 @@ let g:blamer_show_in_visual_modes = 0
 let g:netrw_browsex_viewer='cmd.exe /C start'
 
 " coc install extensions if not already install
-let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json' ]
+let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json', 'coc-tsserver' ]
 
 " space as leader because it's the easiest to reach and useless in normal mode
 let mapleader = " "
