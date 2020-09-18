@@ -26,6 +26,9 @@ call plug#end()
 set number
 set relativenumber
 
+" use spaces when tabbing
+set expandtab
+
 " search case insensitive unless searching with capital letters
 set ignorecase smartcase
 
