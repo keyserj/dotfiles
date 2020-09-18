@@ -26,6 +26,9 @@ call plug#end()
 set number
 set relativenumber
 
+" search case insensitive unless searching with capital letters
+set ignorecase smartcase
+
 " do not continue comment automatically on newlines
 " autocmd needed because ftplugin/vim.vim runs when a file is loaded, and this
 " must be run after that: https://vi.stackexchange.com/q/9366
