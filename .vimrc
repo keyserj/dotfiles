@@ -130,6 +130,9 @@ nnoremap <leader>y :let @+ = expand("%")<CR>
 " insert enter before cursor
 nnoremap <S-CR> i<CR><Esc>
 
+" install plugins
+nnoremap <leader>pi :PlugInstall<CR>
+
 " easier to list and switch buffers (fzf.vim)
 nnoremap <leader>b :Buffers<CR>
 
