@@ -8,6 +8,7 @@ ln -s dotfiles/.tmux.conf
 ln -s dotfiles/.vimrc
 ln -s dotfiles/.vim
 ln -s dotfiles/.gitconfig
+ln -s dotfiles/.gitconfig_global
 
 mkdir -p .config/nvim
 cd .config/nvim

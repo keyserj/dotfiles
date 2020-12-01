@@ -19,6 +19,8 @@
 	default = current
 [fetch]
 	prune = true
+[core]
+	excludesFile = ~/.gitignore_global
 
 ; specific settings (e.g. nvim bin location, work user email)
 [include]
