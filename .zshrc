@@ -42,6 +42,9 @@ alias grm="git fetch && git rebase origin/master" # "git rebase master"
 # for some reason this only works after executing a bad command...??
 setopt HIST_IGNORE_ALL_DUPS
 
+# enable glob usage in commands, e.g. ls **/**_spec.rb
+setopt GLOB_DOTS
+
 # vim mode for terminal line editing
 bindkey -v
 
