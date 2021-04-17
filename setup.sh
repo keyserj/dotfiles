@@ -21,6 +21,13 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 \curl -sSL https://get.rvm.io | bash -s stable --rails
 gem install solargraph
 
+# clipboard for wsl
+sudo apt install unzip
+curl-sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
+
 # create dotfiles
 cd $HOME
 ln -s dotfiles/.zshrc
