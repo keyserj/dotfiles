@@ -16,18 +16,18 @@ export XDG_CONFIG_HOME="$HOME/.config" # default folder for more modern configs.
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden' # use ripgrep and show hidden files
 export EDITOR="nvim"
 
-# plugins
-plugins=(
-	alias-tips
-	git
-	z # navigate to frecent files
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	history-substring-search # after syntax-highlighting to include highlighting features
-	zsh-vim-mode
-	fzf-tab # seems like this needs to be last in plugin list? potentially because of https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins
-)
-source $ZSH/oh-my-zsh.sh
+# set up oh-my-zsh
+source $HOME/antigen.zsh
+antigen bundle Aloxaf/fzf-tab # seems like this needs to be first in plugin list? potentially because of https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins
+antigen use oh-my-zsh
+antigen bundle djui/alias-tips
+antigen bundle git
+antigen bundle z
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle history-substring-search # after syntax-highlighting to include highlighting features
+antigen apply
+source $ZSH/oh-my-zsh.sh # no antigen setup includes this, not sure why I need it - I think others aren't using the oh-my-zsh defaults?
 
 # aliases
 alias be="bundle exec"
