@@ -11,9 +11,17 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 curl -L git.io/antigen > $HOME/antigen.zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash - # for nodejs
+
+# nodejs
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+# ruby/rails
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+\curl -sSL https://get.rvm.io | bash -s stable --rails
+gem install solargraph
+
+# create dotfiles
 cd $HOME
 ln -s dotfiles/.zshrc
 ln -s dotfiles/.tmux.conf
