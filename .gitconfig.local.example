@@ -1,0 +1,5 @@
+[user]
+        name = Joel Keyser
+        email = keyser.joel@gmail.com
+[core]
+        editor = /usr/bin/nvim
