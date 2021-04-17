@@ -104,6 +104,9 @@ let g:netrw_browsex_viewer='cmd.exe /C start'
 " coc install extensions if not already install
 let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json', 'coc-tsserver', 'coc-java' ]
 
+" anchor fzf to bottom of window
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+
 " space as leader because it's the easiest to reach and useless in normal mode
 let mapleader = " "
 
