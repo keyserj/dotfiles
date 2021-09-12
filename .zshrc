@@ -35,7 +35,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle history-substring-search # after syntax-highlighting to include highlighting features
 antigen apply
-source $ZSH/oh-my-zsh.sh # no antigen setup includes this, not sure why I need it - I think others aren't using the oh-my-zsh defaults?
+# source $ZSH/oh-my-zsh.sh # no antigen setup includes this, not sure why I need it - I think others aren't using the oh-my-zsh defaults?
 
 # aliases
 alias be="bundle exec"
@@ -91,7 +91,7 @@ _local_script() {
 compdef _local_script local_script # execute _script when <tab> (key to check for autocompletions) is pressed after the script command is typed out (I think...)
 
 # nvm not using default for some reason... wtf
-nvm use default
+# nvm use default
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
