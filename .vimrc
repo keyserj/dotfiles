@@ -2,6 +2,7 @@
 call plug#begin("~/.vim/plugged")
 Plug 'airblade/vim-gitgutter' " easy view/manage git changes while editing
 Plug 'APZelos/blamer.nvim' " inline blame
+Plug 'arthurxavierx/vim-caser' " coerce between cases (e.g. v + gsX - coerce to snake, dash, dot, space, camel, etc)
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-zoom' " zoom windows via <C-w> m
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
