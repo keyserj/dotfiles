@@ -37,6 +37,7 @@ ln -s dotfiles/.vim
 ln -s dotfiles/.gitconfig
 cp dotfiles/.gitconfig.local.example .gitconfig.local # update if needed
 ln -s dotfiles/.gitignore_global
+ln -s dotfiles/.p10k.zsh
 
 mkdir -p .config/nvim
 cd .config/nvim
