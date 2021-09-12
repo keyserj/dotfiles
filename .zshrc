@@ -53,9 +53,6 @@ setopt HIST_IGNORE_ALL_DUPS
 # enable glob usage in commands, e.g. ls **/**_spec.rb
 setopt GLOB_DOTS
 
-# vim mode for terminal line editing
-bindkey -v
-
 # load modularized scripts
 for file in $HOME/dotfiles/zsh_scripts/*(N); do
 	source "$file"
