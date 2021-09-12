@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if [ -n $(uname -r | grep 'Microsoft') ];
 then # wsl-specific
 	LS_COLORS="ow=01;36;40" && export LS_COLORS
@@ -8,7 +15,7 @@ fi
 # exports
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh installation
 export TERM="screen-256color" # use more colors
-export ZSH_THEME="robbyrussell" # theme
+# export ZSH_THEME="robbyrussell" # theme
 export KEYTIMEOUT=1 # ESC enters vim mode more quickly
 export RAILS_CONSOLE=pry # use pry console
 export SKIP_SIMPLECOV=1 # don't run test coverage when running rspec
@@ -18,6 +25,7 @@ export EDITOR="nvim"
 
 # set up oh-my-zsh
 source $HOME/antigen.zsh
+antigen theme romkatv/powerlevel10k
 antigen bundle Aloxaf/fzf-tab # seems like this needs to be first in plugin list? potentially because of https://github.com/Aloxaf/fzf-tab#compatibility-with-other-plugins
 antigen use oh-my-zsh
 antigen bundle djui/alias-tips
@@ -85,6 +93,8 @@ compdef _local_script local_script # execute _script when <tab> (key to check fo
 # nvm not using default for some reason... wtf
 nvm use default
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 echo "zsh loaded"
 
