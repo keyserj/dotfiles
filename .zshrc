@@ -60,7 +60,9 @@ done
 
 # load scripts specific to device
 for file in $HOME/dotfiles/zsh_specific/*(N); do
-	source "$file"
+        if [[ "$file" != *".gitignore" ]]; then
+                source "$file"
+        fi
 done
 
 # open a note named based on the first argument passed to the command
