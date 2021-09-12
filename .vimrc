@@ -164,6 +164,9 @@ nnoremap <leader>ga :A<CR>
 " go to related file (rails.vim)
 nnoremap <leader>gr :R<CR>
 
+" rename word in file (angle-brackets to match only the whole word)
+nnoremap <leader>rr "yyiw<CR>:%s/\<<C-R>y\>/<C-R>y/g<left><left>
+
 " open current line on GitHub master latest commit (vim-fugitive)
 nnoremap <leader>gom :GBrowse master:%<CR>
 vnoremap <leader>gom :.GBrowse master:%<CR>
