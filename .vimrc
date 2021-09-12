@@ -102,7 +102,7 @@ let g:blamer_show_in_visual_modes = 0
 let g:netrw_browsex_viewer='cmd.exe /C start'
 
 " coc install extensions if not already install
-let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json', 'coc-tsserver', 'coc-java' ]
+let g:coc_global_extensions = [ 'coc-solargraph', 'coc-json', 'coc-tsserver', 'coc-java', 'coc-go']
 
 " anchor fzf to bottom of window
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
