@@ -1,6 +1,7 @@
 " plugins (`:PlugInstall` to install)
 call plug#begin("~/.vim/plugged")
 Plug 'airblade/vim-gitgutter' " easy view/manage git changes while editing
+Plug 'AndrewRadev/splitjoin.vim' " break/join language constructs i.e. loops, conditionals
 Plug 'APZelos/blamer.nvim' " inline blame
 Plug 'arthurxavierx/vim-caser' " coerce between cases (e.g. v + gsX - coerce to snake, dash, dot, space, camel, etc)
 Plug 'christoomey/vim-tmux-navigator'
