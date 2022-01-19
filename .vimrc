@@ -6,6 +6,7 @@ Plug 'APZelos/blamer.nvim' " inline blame
 Plug 'arthurxavierx/vim-caser' " coerce between cases (e.g. v + gsX - coerce to snake, dash, dot, space, camel, etc)
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-zoom' " zoom windows via <C-w> m
+Plug 'elixir-editors/vim-elixir' " elixir syntax isn't built-in
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'junegunn/gv.vim' " better git log view
