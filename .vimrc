@@ -35,6 +35,9 @@ set relativenumber
 " use spaces when tabbing
 set expandtab
 
+" enable mouse scrolling
+set mouse=a
+
 " don't use hanging indent in ruby: https://vi.stackexchange.com/a/12299
 let g:ruby_indent_assignment_style = 'variable'
 
