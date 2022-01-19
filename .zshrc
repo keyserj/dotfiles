@@ -53,6 +53,9 @@ setopt HIST_IGNORE_ALL_DUPS
 # enable glob usage in commands, e.g. ls **/**_spec.rb
 setopt GLOB_DOTS
 
+# remove right aligned portion of prompt after executing command - enables clean copy/pasting
+setopt TRANSIENT_RPROMPT
+
 # load modularized scripts
 for file in $HOME/dotfiles/zsh_scripts/*(N); do
 	source "$file"
