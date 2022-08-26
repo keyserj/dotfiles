@@ -10,7 +10,6 @@ Plug 'elixir-editors/vim-elixir' " elixir syntax isn't built-in
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " makes sure to have latest binary
 Plug 'junegunn/fzf.vim' " nice vim defaults for fzf
 Plug 'junegunn/gv.vim' " better git log view
-Plug 'ludovicchabant/vim-gutentags' " generate tags on file save
 Plug 'morhetz/gruvbox' " colors
 Plug 'neoclide/coc.nvim', { 'branch': 'release' } " autocomplete, language servers
 Plug 'preservim/nerdtree' " file explorer
@@ -228,15 +227,6 @@ nnoremap <leader>ef :NERDTreeFind<CR>
 " override nerdtree C-j & C-k maps so tmux vim navigator can use
 let g:NERDTreeMapJumpPrevSibling=""
 let g:NERDTreeMapJumpNextSibling=""
-
-" use ripper-tags for generating tags via gutentags
-let g:gutentags_ctags_executable_ruby = 'ripper-tags'
-
-" tags - generate for project files
-nnoremap <leader>tp :Start ripper-tags -R --append<CR>
-
-" tags - generate for gems in bundle
-nnoremap <leader>tb :Start ripper-tags -R $(bundle list --paths) --append<CR>
 
 " tab select first Coc option
 inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : "<TAB>"
