@@ -109,3 +109,7 @@ compdef _local_script local_script # execute _script when <tab> (key to check fo
 
 echo "zsh loaded"
 
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
