@@ -31,7 +31,9 @@ call plug#end()
 set number
 set relativenumber
 
-" use spaces when tabbing
+" use 2 spaces when tabbing
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " enable mouse scrolling
