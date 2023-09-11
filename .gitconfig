@@ -25,3 +25,5 @@
 ; specific settings (e.g. nvim bin location, work user email)
 [include]
 	path = ~/.gitconfig.local
+[credential]
+	credentialStore = cache
